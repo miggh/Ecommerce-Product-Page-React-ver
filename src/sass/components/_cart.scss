@@ -1,0 +1,101 @@
+.cart {
+  position: absolute;
+  top: 8rem;
+  right: 2rem;
+  z-index: 999;
+  width: 37.5rem;
+  min-height: 25rem;
+  padding: 1rem;
+  background-color: $color-neutral--white;
+  box-shadow: 0 0 2.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  &__title {
+    color: $color-neutral--black;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-bottom: 1px solid $color-neutral--lightgray;
+    padding: 1rem 0;
+  }
+  //   &__items {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+  &__empty-description {
+    margin-top: 7.5rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-neutral--grayer;
+  }
+
+  &__items__detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    &__img {
+      width: 20%;
+      border-radius: 5px;
+    }
+
+    &__text {
+      &__name {
+        color: $color-neutral--grayer;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      &__price {
+        color: $color-neutral--grayer;
+        font-size: 1.5rem;
+      }
+      &__total-price {
+        color: $color-neutral--dark;
+        font-weight: 700;
+      }
+    }
+
+    &__delete {
+      width: 4rem;
+      height: 4rem;
+      background-color: transparent;
+      border-style: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        transform: scale(1.2);
+        opacity: 0.6;
+      }
+    }
+  }
+  &__items__checkout {
+    margin-top: 2rem;
+    width: 100%;
+    height: 4rem;
+    background-color: $color-primary;
+    color: $color-neutral--white;
+    border-style: none;
+    border-radius: 5px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1.2rem 1.2rem rgba($color-primary, 0.1);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/*******************QUERIES***********************/
+/* 650px */
+@media (max-width: 40.625em) {
+  .cart {
+    width: 97.5%;
+    top: 10rem;
+    right: 1.25%;
+  }
+}

@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin: 0 2rem;
+  margin-top: 0;
+  padding: 2rem;
+  border-bottom: 2px solid $color-neutral--lightgray;
+  position: relative;
+}
+
+.mobile-menu,
+.mobile-overlay {
+  display: none;
+}
+
+.user {
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  &__cart {
+    width: 5rem;
+    height: 5rem;
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    z-index: 999;
+    &:hover .icon__cart path {
+      fill: $color-neutral--dark;
+    }
+
+    &__item {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-primary;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      & p {
+        margin: 0 auto;
+        text-align: center;
+        color: $color-neutral--white;
+      }
+    }
+  }
+
+  &__image {
+    width: 5rem;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      border: 3px solid $color-primary;
+    }
+  }
+
+  .icon__cart path {
+    transition: all 0.2s;
+  }
+}
+
+/***************QURIES***********************/
+/* 800px */
+@media (max-width: 50em) {
+  .mobile-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border-style: none;
+  }
+
+  .mobile-overlay.show {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 99;
+  }
+}

@@ -1,0 +1,81 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90rem;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.big-picture {
+  position: relative;
+  width: 60rem;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  &__close {
+    background-color: transparent;
+    border-style: none;
+    margin-left: auto;
+    cursor: pointer;
+    &:hover .icon-close path {
+      fill: $color-primary;
+    }
+  }
+  &__slider {
+    position: absolute;
+    border-radius: 50%;
+    border-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+  }
+
+  &__previous {
+    left: -2.5rem;
+  }
+
+  &__next {
+    right: -2.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 11px;
+    display: block;
+  }
+}
+
+.icon-close path {
+  fill: $color-primary--light;
+  transition: all 0.2s;
+  transform: scale(1.05);
+}
+
+/***************QURIES***********************/
+/* 1200px */
+@media (max-width: 75em) {
+  .big-picture {
+    width: 50rem;
+    &__slider {
+      top: 27.5rem;
+    }
+  }
+}
+
+/* 900px */
+@media (max-width: 56.25em) {
+  .overlay,
+  .big-picture {
+    display: none;
+  }
+}

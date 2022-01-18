@@ -1,0 +1,94 @@
+.preview {
+  width: 40%;
+
+  &__image {
+    width: 100%;
+    border-radius: 11px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    z-index: 0;
+  }
+
+  &__slider {
+    display: none;
+  }
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: space-between;
+  &__image {
+    width: 20%;
+    border-radius: 11px;
+    cursor: pointer;
+    &__selected {
+      opacity: 0.6;
+
+      border: 3px solid $color-primary;
+    }
+  }
+}
+
+/***************QURIES***********************/
+/* 1200px */
+@media (max-width: 75em) {
+  .preview {
+    margin-top: 4rem;
+    width: 50%;
+  }
+}
+/* 1000px */
+@media (max-width: 62.5em) {
+  .preview {
+    width: 55%;
+  }
+}
+
+/* 900px */
+@media (max-width: 56.25em) {
+  .preview {
+    width: 80%;
+    position: relative;
+    &__slider {
+      position: absolute;
+      border-radius: 50%;
+      border-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      width: 5rem;
+      height: 5rem;
+      cursor: pointer;
+    }
+
+    &__previous {
+      left: 0;
+    }
+
+    &__next {
+      right: 0;
+    }
+  }
+
+  .thumbnail {
+    display: none;
+  }
+}
+
+/* 650px */
+@media (max-width: 40.625em) {
+  .preview {
+    margin-top: 0;
+    width: 100%;
+    &__image {
+      border-radius: 0;
+    }
+    &__previous {
+      left: 2rem;
+    }
+    &__next {
+      right: 2rem;
+    }
+  }
+}

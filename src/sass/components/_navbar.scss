@@ -1,0 +1,80 @@
+.close-menu {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+
+  &__item {
+    &:visited,
+    &:link {
+      text-decoration: none;
+      font-size: 1.6rem;
+      color: $color-neutral--grayer;
+      transition: all 0.3s;
+      position: relative;
+    }
+    &:hover,
+    &:active {
+      color: $color-neutral--dark;
+      font-weight: 700;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3.5rem;
+      width: 0;
+      padding-bottom: 5px;
+      background-color: $color-primary;
+      transition: all 0.2s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+/***************QURIES***********************/
+/* 800px */
+@media (max-width: 50em) {
+  .close-menu {
+    display: block;
+    background-color: transparent;
+    margin: 4rem;
+    border-style: none;
+    cursor: pointer;
+  }
+  .nav {
+    position: absolute;
+    top: 0;
+    left: -22rem;
+    height: 100vh;
+    background-color: $color-neutral--white;
+    z-index: 999;
+    width: 20rem;
+    transition: all 0.2s;
+
+    &.show {
+      left: -2rem;
+    }
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 2rem 4rem;
+    margin-top: 4rem;
+    gap: 4rem;
+    &__item {
+      &:visited,
+      &:link {
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-neutral--dark;
+      }
+    }
+  }
+}
